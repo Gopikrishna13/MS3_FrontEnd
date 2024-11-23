@@ -1,0 +1,13 @@
+<div>
+    <label for="fromLocation">From Location:</label>
+    <input id="fromLocation" type="text" [(ngModel)]="fromLocation" #fromInput />
+    <label for="toLocation">To Location:</label>
+    <input id="toLocation" type="text" [(ngModel)]="toLocation" #toInput />
+    <button (click)="calculateDistance()">Calculate</button>
+  </div>
+  
+  <div id="map" style="width: 100%; height: 400px; margin-top: 20px;"></div>
+  <div *ngIf="distance">
+    <h3>Distance: {{ distance }} km</h3>
+  </div>
+  

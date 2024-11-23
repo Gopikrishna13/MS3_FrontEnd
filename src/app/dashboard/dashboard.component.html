@@ -1,0 +1,74 @@
+<div class="dashboard">
+    <div class="card">
+      <h3>Total Users</h3>
+      <p>{{ totalUsers }}</p>
+    </div>
+    <div class="card">
+      <h3>Total Bikes</h3>
+      <p>{{ totalBikes }}</p>
+    </div>
+    <div class="card">
+      <h3>Booked Bikes</h3>
+      <p>{{ BookedBikes }}</p>
+    </div>
+    <div class="card">
+      <h3>Revenue</h3>
+      <p>{{ revenue | currency }}</p>
+    </div>
+  </div>
+  
+
+  <div class="dashboard">
+    <h3>Inventory Management</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Registration Number</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bike of bikes">
+                <td>{{ bike.registrationNumber }}</td>
+                <td>{{ bike.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="container">
+    <h2>User History</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>User Name</th>
+          <th>Total Requests</th>
+          <th>Total Returned</th>
+          <th>Total Pending</th>
+          <th>Total Late Returns</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userHistories">
+          <td>{{ user.userName }}</td>
+          <td>{{ user.totalRequests }}</td>
+          <td>{{ user.totalReturned }}</td>
+          <td>{{ user.totalPending }}</td>
+          <td>{{ user.totalLateReturns }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+
+ <div class="chart-container">
+  <h3>Pie Chart</h3>
+  <canvas id="PieChart"></canvas>
+</div>
+
+<div class="chart-container">
+  <h3>Bar Chart</h3>
+  <canvas id="BarChart"></canvas>
+</div>
